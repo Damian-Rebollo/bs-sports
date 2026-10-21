@@ -18,6 +18,7 @@ function createActivityCard(activity: Activity): HTMLElement {
   const column = document.createElement("div");
   column.className = "col";
 
+  
   const entry = document.createElement("div");
   entry.className = "card h-100 border-success-subtle shadow-sm";
   const content = document.createElement("div");
@@ -38,7 +39,7 @@ function createActivityCard(activity: Activity): HTMLElement {
   const removeButton = document.createElement("button");
   removeButton.type = "button";
   removeButton.textContent = "Eliminar";
-  // agregar clase
+  removeButton.className = "btn btn-danger";
   removeButton.addEventListener("click", () => {
     activities.remove(activity);
     renderActivities();
@@ -49,6 +50,7 @@ function createActivityCard(activity: Activity): HTMLElement {
   entry.appendChild(content);
   column.appendChild(entry);
   return column;
+  
 }
 
 function renderActivities(): void {
